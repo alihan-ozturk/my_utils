@@ -351,4 +351,15 @@ def train_with_validation_and_verify(
         print(f"Çıkarılan Sembolik Formülün MSE'si        : {symbolic_mse.item():.6f}")
 
 if __name__ == '__main__':
-    train_with_validation_and_verify()
+    train_with_validation_and_verify(
+        epochs=40000,
+        lr=1e-3, 
+        
+        initial_lambda_sim=0.01,  
+        initial_lambda_spar=0.0,
+        initial_lambda_comp=0.0,
+        
+        patience=4, 
+        lr_decay_factor=0.5,
+        lambda_increase_factor=10.0 
+    )
